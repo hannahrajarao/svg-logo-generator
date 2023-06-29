@@ -1,5 +1,5 @@
 const { describe } = require("node:test")
-const Triangle = require('./shapes.js')
+const {Triangle, Circle, Square} = require('./shapes.js')
 
 describe('shape', () => {
     describe('triangle', () => {
