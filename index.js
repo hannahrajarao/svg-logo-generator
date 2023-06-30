@@ -10,14 +10,19 @@ inquirer.prompt([
     },
     {
         type: 'input',
-        message: 'Enter logo color (css named color or hexadecimal)',
-        name: 'color'
+        message: 'Enter text color (css named color or hexadecimal): ',
+        name: 'text_color'
     },
     {
         type: 'list',
         message: 'Choose a shape for your logo',
         name: 'shape',
         choices: ['triangle', 'circle', 'square']
+    },
+    {
+        type: 'input',
+        message: 'Enter shape color (css named color or hexadecimal): ',
+        name: 'shape_color'
     }
 ])
 .then(answers => {
