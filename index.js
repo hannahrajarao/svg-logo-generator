@@ -28,10 +28,30 @@ inquirer.prompt([
     }
 ])
 .then(answers => {
-    // console.log(answers);
-    // generate svg
-    const tri = new Triangle();
-    tri.setColor('green')
-    // save svg
-    console.log(tri.render());
-})
+
+    // Choose shape based on user entry
+    let shape;
+    switch(answers.shape) {
+        case 'triangle': 
+            shape = new Triangle();
+            break;
+        case 'circle': 
+            shape = new Circle();
+            break;
+        case 'square': 
+            shape = new Square();
+            break;
+    }
+    shape.setColor(answers.shape_color);
+
+    // Create Text object to manage text element
+    const text = new Text(answers.text);
+    text.setColor(answers.text_color);
+    
+    // Create logo element to combine shape and text into single svg
+    const logo = new Logo(text, shape);
+    console.log(logo.render());
+
+    // Write to file
+    
+});
