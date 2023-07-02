@@ -1,5 +1,7 @@
-const inquirer = require('inquirer')
-const Triangle = require('./shapes.js')
+const inquirer = require('inquirer');
+const {Triangle, Circle, Square} = require('./lib/shapes.js');
+const Text = require('./lib/text.js');
+const Logo = require('./lib/logo.js');
 
 // get user input 
 inquirer.prompt([
