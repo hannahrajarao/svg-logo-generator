@@ -7,23 +7,23 @@ const Logo = require('./lib/logo.js');
 inquirer.prompt([
     {
         type: 'input',
-        message: 'text',
+        message: 'Enter text for logo:',
         name: 'text'
     },
     {
         type: 'input',
-        message: 'Enter text color (css named color or hexadecimal): ',
+        message: 'Enter text color (css named color or hexadecimal):',
         name: 'text_color'
     },
     {
         type: 'list',
-        message: 'Choose a shape for your logo',
+        message: 'Choose a shape for your logo:',
         name: 'shape',
         choices: ['triangle', 'circle', 'square']
     },
     {
         type: 'input',
-        message: 'Enter shape color (css named color or hexadecimal): ',
+        message: 'Enter shape color (css named color or hexadecimal):',
         name: 'shape_color'
     }
 ])
