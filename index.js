@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const fs = require('fs');
 const {Triangle, Circle, Square} = require('./lib/shapes.js');
 const Text = require('./lib/text.js');
 const Logo = require('./lib/logo.js');
@@ -50,8 +51,9 @@ inquirer.prompt([
     
     // Create logo element to combine shape and text into single svg
     const logo = new Logo(text, shape);
-    console.log(logo.render());
 
     // Write to file
-    
+    fs.writeFile('logo.svg', logo.render(), (err) => {
+        err ? console.error(err) : console.log('Generated logo.svg');
+    });
 });
